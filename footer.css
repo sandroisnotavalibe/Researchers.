@@ -1,0 +1,109 @@
+footer {
+    background-color: #1f293762;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 7%;
+}
+
+footer p {
+    margin: 0 0 15px 0;
+    font-size: 1rem;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.Btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.svgContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(156, 156, 156, 0.466);
+    transition: all 0.3s ease;
+}
+
+.BG {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    z-index: -1;
+    border-radius: 9px;
+    transition: transform 0.3s ease;
+}
+
+.Btn:hover .BG {
+    transform: rotate(35deg);
+}
+
+.Btn:hover .svgContainer {
+    background-color: rgba(156, 156, 156, 0.466);
+}
+
+/* Ensure responsiveness */
+@media (max-width: 600px) {
+    .btn-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+/* Learn More Button Styling */
+/* Smaller Learn More Button Styling */
+.button {
+    --main-color: rgb(30, 94, 233);
+    --main-bg-color: rgba(13, 186, 238, 0.36);
+    --pattern-color: rgba(46, 213, 116, 0.073);
+  
+    filter: hue-rotate(0deg);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+    background: radial-gradient(
+        circle,
+        var(--main-bg-color) 0%,
+        rgba(0, 0, 0, 0) 95%
+      ),
+      linear-gradient(var(--pattern-color) 1px, transparent 1px),
+      linear-gradient(to right, var(--pattern-color) 1px, transparent 1px);
+    background-size: cover, 10px 10px, 10px 10px;
+    background-position: center center, center center, center center;
+    border-image: radial-gradient(circle, var(--main-color) 0%, rgba(0, 0, 0, 0) 100%) 1;
+    border-width: 1px 0;
+    border-style: solid;
+    color: var(--main-color);
+    padding: 0.6rem 2rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    transition: background-size 0.2s ease-in-out, filter 0.2s ease;
+  }
+  
+  .button:hover {
+    background-size: cover, 8px 8px, 8px 8px;
+  }
+  
+  .button:active {
+    filter: hue-rotate(250deg);
+  }
+  
