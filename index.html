@@ -1,286 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Research Hub</title>
-    <link rel="stylesheet" href="footer.css">
-    <style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Research Hub</title>
+  <link rel="stylesheet" href="footer.css" />
+  <style>
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body {
-            height: 100%;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #eef2f7;
-        }
-        body {
-            display: flex;
-            flex-direction: column;
-        }
-        header {
-            background-color: #1f2937;
-            color: white;
-            padding: 20px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        header img {
-            max-height: 90px;
-        }
-  
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+        height: 100%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #eef2f7;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    header {
+        background-color: #1f2937;
+        color: white;
+        padding: 20px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    header img {
+        max-height: 90px;
+    }
 
-        main {
-            flex: 1;
-            padding: 60px 30px;
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px 30px;
-        }
 
-        .content-box {
-            background-color: white;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            border-top: 5px solid #4f46e5;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .content-box:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-        }
-        .content-box h3 {
-            font-size: 1.6em;
-            color: #1f2937;
-            margin-bottom: 15px;
-        }
-        .content-box p {
-            font-size: 1.1em;
-            color: #6b7280;
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        .btn {
-            background-color: #4f46e5;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s;
-        }
-        .btn:hover {
-            background-color: #4338ca;
-        }
+    main {
+        flex: 1;
+        padding: 60px 30px;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px 30px;
+    }
 
-     
-        #modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 999;
-        }
-        #modal {
-            display: none;
-            position: fixed;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 40px 50px;
-            border-radius: 10px;
-            max-width: 600px;
-            width: 90%;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-        }
-        .close-btn {
-            background-color: #f87171;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            float: right;
-        }
+    .content-box {
+        background-color: white;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        border-top: 5px solid #4f46e5;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .content-box:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+    .content-box h3 {
+        font-size: 1.6em;
+        color: #1f2937;
+        margin-bottom: 15px;
+    }
+    .content-box p {
+        font-size: 1.1em;
+        color: #6b7280;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    .btn {
+        background-color: #4f46e5;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s;
+    }
+    .btn:hover {
+        background-color: #4338ca;
+    }
 
-        @media (max-width: 768px) {
-            header { flex-direction: column; align-items: flex-start; }
-            main { padding: 40px 20px;}
-            nav { margin-top: 10px; }
-        }
-        /* Default styling */
+ 
+    #modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 999;
+    }
+    #modal {
+        display: none;
+        position: fixed;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 40px 50px;
+        border-radius: 10px;
+        max-width: 600px;
+        width: 90%;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+    .close-btn {
+        background-color: #f87171;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        float: right;
+    }
+
+    @media (max-width: 768px) {
+        header { flex-direction: column; align-items: flex-start; }
+        main { padding: 40px 20px;}
+        nav { margin-top: 10px; }
+    }
+    /* Default styling */
 .container {
-  display: flex;
-  flex-direction: column; /* Column layout for large screens */
-  gap: 20px;
+display: flex;
+flex-direction: column; /* Column layout for large screens */
+gap: 20px;
 }
 
 /* Responsive styling */
 @media (max-width: 768px) {
 
 
-  .item {
-    flex: 1 1 30%; /* Adjust item width */
-  }
+.item {
+flex: 1 1 30%; /* Adjust item width */
+}
 }
 nav a {
-    position: relative;
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
+position: relative;
+color: white;
+text-decoration: none;
+margin: 0 15px;
+font-size: 1.2em;
+transition: color 0.3s ease;
 }
 
 nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: #a5b4fc;
-    transition: width 0.3s ease;
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -4px;
+left: 0;
+background-color: #a5b4fc;
+transition: width 0.3s ease;
 }
 
 nav a:hover::after {
-    width: 100%; /* Full underline on hover */
+width: 100%; /* Full underline on hover */
 }
 
 nav a:hover {
-    color: #a5b4fc;
+color: #a5b4fc;
 }
 
 /* New section styles */
 .credits {
-    background-color: #1f2937;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 1.1rem;
+background-color: #1f2937;
+color: white;
+padding: 20px;
+text-align: center;
+font-size: 1.1rem;
 }
 
 .credits p {
-    margin: 5px 0;
+margin: 5px 0;
 }
 
 .credits strong {
-    font-weight: bold;
+font-weight: bold;
 }
 
 
-    </style>
+</style>
 </head>
 <body>
 
 <header>
-    <img src="Mustache Detective Researcher Logo _ Design.com Logo Maker _ Design.com and 5 more pages - Personal - Microsoft​ Edge 3_16_2025 4_15_40 PM.png" alt="AI Research Hub Logo">
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-    </nav>
-  
+    <img src="Screenshot__41_-removebg-preview.png" alt="AI Research Hub Logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+  </nav>
 </header>
 
 <main class="container">
-    <!-- Content Boxes -->
-    <div class="content-box">
-        <h3>AI Overview</h3>
-        <p>Learn about AI’s branches and its evolution over time.</p>
-        <button class="button" onclick="openModal('AI Overview', 'AI simulates human intelligence with ML, NLP, and more.')">Learn More</button>
-    </div>
+  <div class="content-box">
+    <h3>AI Overview</h3>
+    <p>Learn about AI’s branches and its evolution over time.</p>
+    <button class="button" onclick="openModal('AI Overview', 'Artificial Intelligence (AI) refers to the simulation of human intelligence in machines. It includes fields such as machine learning, natural language processing, computer vision, and robotics. The field has evolved from basic automation to advanced systems capable of self-learning and real-time decision-making.')">Learn More</button>
+  </div>
 
-    <div class="content-box">
-        <h3>Machine Learning</h3>
-        <p>Explore ML algorithms: supervised, unsupervised, reinforcement learning.</p>
-        <button class="button" onclick="openModal('Machine Learning', 'ML improves systems via data learning, enhancing decision-making.')">Learn More</button>
-    </div>
+  <div class="content-box">
+    <h3>Machine Learning</h3>
+    <p>Explore ML algorithms: supervised, unsupervised, reinforcement learning.</p>
+    <button class="button" onclick="openModal('Machine Learning', 'Machine Learning (ML) is a branch of AI that allows systems to learn from data. It involves supervised learning (with labeled data), unsupervised learning (without labels), and reinforcement learning (learning via feedback loops). ML is used in image recognition, spam filtering, and recommendation systems.')">Learn More</button>
+  </div>
 
-    <div class="content-box">
-        <h3>Deep Learning</h3>
-        <p>Explore neural networks and AI’s capabilities.</p>
-        <button class="button" onclick="openModal('Deep Learning', 'DL uses neural networks for tasks like NLP and vision.')">Learn More</button>
-    </div>
+  <div class="content-box">
+    <h3>Deep Learning</h3>
+    <p>Explore neural networks and AI’s capabilities.</p>
+    <button class="button" onclick="openModal('Deep Learning', 'Deep Learning (DL) uses neural networks with many layers to model complex patterns in data. It powers applications such as natural language processing, speech recognition, autonomous driving, and image classification. DL mimics the human brain’s structure and can analyze vast amounts of data efficiently.')">Learn More</button>
+  </div>
 
-    <div class="content-box">
-        <h3>AI in Business</h3>
-        <p>AI optimizes business processes and decision-making.</p>
-        <button class="button" onclick="openModal('AI in Business', 'AI improves efficiency in healthcare, finance, and more.')">Learn More</button>
-    </div>
+  <div class="content-box">
+    <h3>AI in Business</h3>
+    <p>AI optimizes business processes and decision-making.</p>
+    <button class="button" onclick="openModal('AI in Business', 'Businesses use AI to streamline operations, enhance customer experience, and gain insights from data. In industries like healthcare, finance, retail, and logistics, AI tools help with predictive analytics, automation, fraud detection, and personalized marketing.')">Learn More</button>
+  </div>
 
-    <div class="content-box">
-        <h3>Ethical AI</h3>
-        <p>Discuss ethics and AI responsibility.</p>
-        <button class="button" onclick="openModal('Ethical AI', 'AI ethics focus on bias, privacy, and transparency.')">Learn More</button>
-    </div>
+  <div class="content-box">
+    <h3>Ethical AI</h3>
+    <p>Discuss ethics and AI responsibility.</p>
+    <button class="button" onclick="openModal('Ethical AI', 'Ethical AI involves building transparent, fair, and unbiased systems. Issues include data privacy, algorithmic bias, accountability, and societal impact. Ensuring ethical use of AI requires collaboration between developers, users, and policymakers.')">Learn More</button>
+  </div>
 
-    <div class="content-box">
-        <h3>AI Future</h3>
-        <p>Future AI trends: Edge AI, XAI, and more integration.</p>
-        <button class="button" onclick="openModal('Future of AI', 'AI’s future is driven by innovation and ethical practices.')">Learn More</button>
-    </div>
+  <div class="content-box">
+    <h3>AI Future</h3>
+    <p>Future AI trends: Edge AI, XAI, and more integration.</p>
+    <button class="button" onclick="openModal('Future of AI', 'The future of AI includes Edge AI (processing on devices), Explainable AI (transparent algorithms), and broader use across everyday life. AI will transform education, healthcare, transportation, and security while raising new challenges in regulation and ethics.')">Learn More</button>
+  </div>
 </main>
 
-<footer>
-    <p>&copy; 2025 AI Research Hub | All Rights Reserved</p>
-    <div class="btn-container">
-
-
-        <!-- Instagram Button -->
-        <a href="https://www.instagram.com/gio__chanturia" target="_blank">
-            <button class="Btn">
-                <span class="svgContainer">
-                     <svg fill="white" class="svgIcon" viewBox="0 0 448 512" height="1.5em" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path>
-                </svg>
-                </span>
-                <span class="BG"></span>
-            </button>
-        </a>
-
-        <!-- Facebook Button -->
-        <a href="https://www.facebook.com/sandro.uridia.5/ " target="_blank">
-            <button class="Btn">
-                <span class="svgContainer">
-                    <svg fill="white" class="svgIcon" viewBox="0 0 320 512" height="1.5em" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M279.14 288l14.22-92.66h-88.91V134.24c0-25.35 12.42-50.06 52.24-50.06H293V6.26S259.1 0 225.36 0C141.09 0 89.09 54.42 89.09 153.12V195.3H0v92.66h89.09V512h107.93V288z"></path>
-                    </svg>
-                </span>
-                <span class="BG"></span>
-            </button>
-        </a>
-    </div>
-</footer>
-
-<div id="modal-overlay"></div>
+<div id="modal-overlay" onclick="closeModal()"></div>
 <div id="modal">
-    <button class="close-btn" onclick="closeModal()">Close</button>
-    <h2 id="modal-title"></h2>
-    <p id="modal-content"></p>
+  <button class="close-btn" onclick="closeModal()">Close</button>
+  <h2 id="modal-title"></h2>
+  <p id="modal-content"></p>
 </div>
 
-<script>
-    function openModal(title, content) {
-        document.getElementById('modal-title').innerText = title;
-        document.getElementById('modal-content').innerText = content;
-        document.getElementById('modal').style.display = 'block';
-        document.getElementById('modal-overlay').style.display = 'block';
-    }
-    
-    function closeModal() {
-        document.getElementById('modal').style.display = 'none';
-        document.getElementById('modal-overlay').style.display = 'none';
-    }
+<footer class="credits">
+  <p>&copy; 2025 AI Research Hub | All Rights Reserved</p>
+</footer>
 
-    document.getElementById('modal-overlay').addEventListener('click', closeModal);
+<script>
+  function openModal(title, content) {
+    document.getElementById('modal-title').textContent = title;
+    document.getElementById('modal-content').textContent = content;
+    document.getElementById('modal-overlay').style.display = 'block';
+    document.getElementById('modal').style.display = 'block';
+  }
+
+  function closeModal() {
+    document.getElementById('modal-overlay').style.display = 'none';
+    document.getElementById('modal').style.display = 'none';
+  }
 </script>
 
 </body>
 </html>
+
